@@ -62,12 +62,12 @@ class Perro:
         """
         return Perro(self.name, self.peso + val2.peso, self.height)
 
-    def __str__(self):
-        """
-        Método especial __str__ que devuelve una representación en forma de cadena de un objeto Perro.
-        Esto es útil cuando queremos imprimir información del perro o ver el resultado de una suma de perros.
-        """
-        return f"Perro: {self.name}, Peso: {self.peso} kg, Altura: {self.height} cm"
+    # def __str__(self):
+    #     """
+    #     Método especial __str__ que devuelve una representación en forma de cadena de un objeto Perro.
+    #     Esto es útil cuando queremos imprimir información del perro o ver el resultado de una suma de perros.
+    #     """
+    #     return f"Perro: {self.name}, Peso: {self.peso} kg, Altura: {self.height} cm"
 
     def __bool__(self):
         """
@@ -126,3 +126,8 @@ print(f"El nombre de {perro2.name} es: {perro2.name}")
 
 # Explota? ---> AttributeError: 'Perro' object has no attribute 'nombre_original'
 print(f"El nombre original de {perro2.name} es: {perro2.nombre_original}")
+
+
+''' If __new__ detects a weight that exceeds a threshold, 
+it can return a special object (like a "Trainer") 
+instead of the standard dog object.'''

@@ -4,6 +4,9 @@
 # PLEASE NOTE: A matrix in Python can be visualized as a list of lists,
 # where each inner list represents a row of the matrix.
 
+string_prueba = "Hello Worls"
+print(string_prueba[::-2])
+
 # Let's start by initializing our matrix.
 matrix = [[0 for _ in range(3)] for _ in range(3)]
 

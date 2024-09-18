@@ -25,17 +25,23 @@ bidding_finished = False
 def find_highest_bidder(bidding_record):
     # Initializing a variable to store the highest bid found.
     highest_bid = 0
+    
     # Initializing a variable to store the name of the highest bidder.
     winner = ""
+    
     # Iterating through the bidding_record dictionary.
+    # By default, when you iterate over a dictionary, it gives you the keys (the bidders in this case).
     for bidder in bidding_record:
-        # Getting the amount bid by the current bidder in the loop.
+        # Accessing the bid amount using the key (bidder).
+        # bidder is the key, and bidding_record[bidder] gives you the value (the bid amount).
         bid_amount = bidding_record[bidder]
-        # Checking if the current bid amount is higher than the current highest bid.
+        
+        # Check if the current bid is higher than the current highest bid.
         if bid_amount > highest_bid:
-            # If true, update the highest bid to the current bid amount.
+            # If the current bid is higher, update the highest_bid to this new higher value.
             highest_bid = bid_amount
-            # Update the winner to the current bidder's name.
+            
+            # Also, update the winner to be the current bidder (the key from the dictionary).
             winner = bidder
     # Printing the winner and their bid amount to the terminal.
     print(f"The winner is {winner} with a bid of ${highest_bid}")

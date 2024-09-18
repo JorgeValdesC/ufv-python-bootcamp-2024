@@ -66,6 +66,7 @@ print("Count of 'apple':", count)  # Outputs: 1
 fruits.sort()
 print("After sort (ascending):", fruits)  # Outputs: ['apple', 'apricot', 'banana', 'cherry', 'date', 'elderberry', 'fig']
 
+
 # Sorting in descending order
 fruits.sort(reverse=True)
 print("After sort (descending):", fruits)  # Outputs: ['fig', 'elderberry', 'date', 'cherry', 'banana', 'apricot', 'apple']
