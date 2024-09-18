@@ -8,6 +8,8 @@ array_3d = np.arange(24).reshape(3, 4, 2)
 print("Original 3D array:")
 print(array_3d)
 
+# pequeño cambio para explicar git
+
 # The 3D array can be thought of as:
 # [
 #   [[ 0,  1],   <- First matrix (4x2)
