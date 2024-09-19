@@ -10,7 +10,10 @@ print(array_3d)
 
 # pequeño cambio para explicar git
 
-# The 3D array can be thought of as:
+# cambios revisados 
+# ahora si la lio más para git
+
+# The 3D ar#ray can be thought of as:
 # [
 #   [[ 0,  1],   <- First matrix (4x2)
 #    [ 2,  3],
