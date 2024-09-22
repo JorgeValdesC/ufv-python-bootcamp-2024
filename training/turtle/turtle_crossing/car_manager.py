@@ -12,8 +12,8 @@ COLORS = [
     "blue",
     "purple",
 ]  # Cars can be of any of these colors
-STARTING_MOVE_DISTANCE = 5  # Initial speed of our cars
-MOVE_INCREMENT = 10  # Speed increase each time we "level up"
+STARTING_MOVE_DISTANCE = 0.5  # Initial speed of our cars
+MOVE_INCREMENT = 0.5  # Speed increase each time we "level up"
 
 
 # CarManager class is the big boss here. It handles everything related to our cars.
@@ -25,7 +25,7 @@ class CarManager:
 
     # Time to make a car! But we're feeling lucky—only a 1 in 6 chance to actually make one each time
     def create_car(self):
-        random_chance = random.randint(1, 25)  # Roll the dice
+        random_chance = random.randint(1, 50)  # Roll the dice
         if (
             random_chance == 1
         ):  # If we roll a 1, we create a car. It's like car lottery!
@@ -33,7 +33,7 @@ class CarManager:
                 "square"
             )  # Our car shape is a square (or a rectangle when we stretch it)
             new_car.shapesize(
-                stretch_wid=1, stretch_len=2
+                stretch_wid=0.5, stretch_len=0.5
             )  # Stretch it to make it look like a car
             new_car.penup()  # Lift the pen because we don't want tire tracks
             new_car.color(random.choice(COLORS))  # Randomly color our car

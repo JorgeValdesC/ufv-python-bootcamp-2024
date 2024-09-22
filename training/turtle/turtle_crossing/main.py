@@ -6,6 +6,7 @@ from player import (
 from car_manager import CarManager  # Our car manager that handles all car-related logic
 from scoreboard import Scoreboard  # The scoreboard to keep track of the player's level
 
+
 # Setting up the screen
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -23,21 +24,24 @@ screen.listen()
 screen.onkey(player.go_up, "Up")  # When "Up" key is pressed, turtle moves up
 
 # The main game loop
+vidas = 5
 game_is_on = True
 while game_is_on:  # This loop will continue to run as long as game_is_on is True
     # time.sleep(0.1)  # Pause for 0.1 seconds; gives us a chance to see what's happening
     screen.update()  # Manually update the screen
-
+       
     car_manager.create_car()  # Try to create a car (it has a 1/6 chance each loop iteration)
     car_manager.move_cars()  # Move all existing cars
 
     # Collision detection with car
     for car in car_manager.all_cars:  # Iterate over all existing cars
         if (
-            car.distance(player) < 20
+            car.distance(player) < 5
         ):  # Turtle's collision detection method, if < 20 it's a collision
-            game_is_on = False  # End the game
-            scoreboard.game_over()  # Display "Game Over"
+            vidas = vidas -1
+            if vidas == 0:
+                game_is_on = False  # End the game
+                scoreboard.game_over()  # Display "Game Over"
 
     # Check for successful crossing
     if player.is_at_finish_line():  # If player's y-coordinate is past a certain point
